@@ -1,0 +1,361 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.utonium.ledborgclient"
+    android:id="@+id/hl1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity" >
+
+        <EditText
+            android:id="@+id/ServerHostText"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="10.10.10.90" />
+
+        <TextView
+            android:id="@+id/ServerHostLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ServerHostText"
+            android:layout_alignBottom="@+id/ServerHostText"
+            android:layout_toRightOf="@+id/ServerHostText"
+            android:text="@string/server_ip_or_hostname"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/ServerPortText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ServerHostText"
+            android:layout_alignRight="@+id/ServerHostText"
+            android:layout_below="@+id/ServerHostText"
+            android:ems="10"
+            android:inputType="number"
+            android:text="9999" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ServerPortText"
+            android:layout_alignBottom="@+id/ServerPortText"
+            android:layout_alignLeft="@+id/ServerHostLabel"
+            android:text="@string/server_port"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ButtonGetColour"
+            android:layout_marginLeft="22dp"
+            android:layout_toRightOf="@+id/ServerHostLabel" />
+
+        <Button
+            android:id="@+id/ButtonGetColour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ServerHostLabel"
+            android:layout_alignBottom="@+id/ServerHostLabel"
+            android:layout_toRightOf="@+id/ServerHostLabel"
+            android:text="@string/get_colour" />
+
+        <com.utonium.ledborgclient.LedButton
+            android:id="@+id/LedButtonCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignRight="@+id/progressBar1"
+            android:layout_below="@+id/progressBar1" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scr1"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideInset" >
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill"
+            android:scrollbarAlwaysDrawVerticalTrack="false" >
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="18dp"
+                android:minHeight="28dip"
+                app:colour="000" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/LedButton01"
+                android:minHeight="28dip"
+                app:colour="001" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/LedButton02"
+                android:minHeight="28dip"
+                app:colour="002" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:minHeight="28dip"
+                app:colour="010" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/LedButton04"
+                android:minHeight="28dip"
+                app:colour="011" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/LedButton05"
+                android:minHeight="28dip"
+                app:colour="012" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/LedButton01"
+                android:layout_below="@+id/LedButton01"
+                android:minHeight="28dip"
+                app:colour="020" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton12"
+                android:layout_alignBottom="@+id/LedButton12"
+                android:layout_toLeftOf="@+id/LedButton03"
+                android:minHeight="28dip"
+                app:colour="021" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LedButton02"
+                android:layout_toRightOf="@+id/LedButton02"
+                android:minHeight="28dip"
+                app:colour="022" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton11"
+                android:layout_alignBottom="@+id/LedButton11"
+                android:layout_alignLeft="@+id/LedButton04"
+                android:minHeight="28dip"
+                app:colour="100" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton08"
+                android:layout_alignBottom="@+id/LedButton08"
+                android:layout_toRightOf="@+id/LedButton08"
+                android:minHeight="28dip"
+                app:colour="101" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton09"
+                android:layout_alignBottom="@+id/LedButton09"
+                android:layout_toRightOf="@+id/LedButton09"
+                android:minHeight="28dip"
+                app:colour="102" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/LedButton12"
+                android:layout_below="@+id/LedButton12"
+                android:minHeight="28dip"
+                app:colour="110" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton24"
+                android:layout_alignBottom="@+id/LedButton24"
+                android:layout_toLeftOf="@+id/LedButton11"
+                android:minHeight="28dip"
+                app:colour="111" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton22"
+                android:layout_alignBottom="@+id/LedButton22"
+                android:layout_toRightOf="@+id/LedButton22"
+                android:minHeight="28dip"
+                app:colour="112" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/LedButton08"
+                android:layout_below="@+id/LedButton08"
+                android:minHeight="28dip"
+                app:colour="120" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton17"
+                android:layout_alignBottom="@+id/LedButton17"
+                android:layout_toLeftOf="@+id/LedButton07"
+                android:minHeight="28dip"
+                app:colour="121" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton18"
+                android:layout_alignBottom="@+id/LedButton18"
+                android:layout_toRightOf="@+id/LedButton18"
+                android:minHeight="28dip"
+                app:colour="122" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/LedButton24"
+                android:layout_below="@+id/LedButton24"
+                android:minHeight="28dip"
+                app:colour="200" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton13"
+                android:layout_alignBottom="@+id/LedButton13"
+                android:layout_toRightOf="@+id/LedButton13"
+                android:minHeight="28dip"
+                app:colour="201" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton20"
+                android:layout_alignBottom="@+id/LedButton20"
+                android:layout_alignLeft="@+id/LedButton23"
+                android:minHeight="28dip"
+                app:colour="202" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton16"
+                android:layout_alignBottom="@+id/LedButton16"
+                android:layout_alignLeft="@+id/LedButton17"
+                android:minHeight="28dip"
+                app:colour="210" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton19"
+                android:layout_alignBottom="@+id/LedButton19"
+                android:layout_alignLeft="@+id/LedButton18"
+                android:minHeight="28dip"
+                app:colour="211" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LedButton21"
+                android:layout_alignBottom="@+id/LedButton21"
+                android:layout_alignLeft="@+id/LedButton14"
+                android:minHeight="28dip"
+                app:colour="212" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/LedButton26"
+                android:layout_below="@+id/LedButton14"
+                android:minHeight="28dip"
+                app:colour="222" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/LedButton25"
+                android:layout_below="@+id/LedButton07"
+                android:minHeight="28dip"
+                app:colour="221" />
+
+            <com.utonium.ledborgclient.LedButton
+                android:id="@+id/LedButton25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/LedButton26"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/LedButton07"
+                android:minHeight="28dip"
+                app:colour="220" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

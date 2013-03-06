@@ -8,6 +8,36 @@ public class Colour {
 	private int _blue;
 
 
+	public int get_red() {
+		return _red;
+	}
+
+
+	public void set_red(int _red) {
+		this._red = _red;
+	}
+
+
+	public int get_green() {
+		return _green;
+	}
+
+
+	public void set_green(int _green) {
+		this._green = _green;
+	}
+
+
+	public int get_blue() {
+		return _blue;
+	}
+
+
+	public void set_blue(int _blue) {
+		this._blue = _blue;
+	}
+
+
 	public Colour() {
 	}
 
@@ -43,5 +73,35 @@ public class Colour {
 		html += conversion[_blue];
 
 		return(html);
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + _blue;
+		result = prime * result + _green;
+		result = prime * result + _red;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Colour other = (Colour) obj;
+		if (_blue != other._blue)
+			return false;
+		if (_green != other._green)
+			return false;
+		if (_red != other._red)
+			return false;
+		return true;
 	}
 }

@@ -53,6 +53,7 @@ public class MainActivity extends Activity {
 				_serverHost = s.toString();
 			}
 		});
+		_serverHost = textServerHost.getEditableText().toString();
 
 		EditText textServerPort = (EditText) findViewById(R.id.ServerPortText);
 		textServerPort.addTextChangedListener(new TextWatcher() {
@@ -69,7 +70,9 @@ public class MainActivity extends Activity {
 				_serverPort = Integer.parseInt(s.toString());
 			}
 		});
-
+		if(textServerPort.getEditableText().toString() != "") {
+			_serverPort = Integer.parseInt(textServerPort.getEditableText().toString());
+		}
 
 		Button btnGetColour = (Button) findViewById(R.id.ButtonGetColour);
 		btnGetColour.setOnClickListener(new OnClickListener() {
